@@ -23,6 +23,7 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+let g:c_syntax_for_h = 1
 let g:NERDCreateDefaultMappings = 1
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
