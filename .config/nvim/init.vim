@@ -7,11 +7,17 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'junegunn/fzf'
+Plug 'kuznetsss/shswitch'
 Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
 filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+autocmd FileType c setlocal tabstop=2 shiftwidth=2
 
 set number
 set relativenumber
@@ -43,3 +49,6 @@ nmap <silent>K <Plug>(lcn-hover)
 nmap <silent> gd <Plug>(lcn-definition)
 nmap <silent> <F2> <Plug>(lcn-rename)
 autocmd BufWritePre *.c,*.h,*.cpp :call LanguageClient#textDocument_formatting_sync()
+
+let g:shswitch_root_flags = ['CMakeLists.txt', 'Makefile']
+nnoremap <F4> :SHSwitch<CR>
