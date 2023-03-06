@@ -5,3 +5,5 @@ ms-vscode.cpptools-extension-pack
 ms-vscode.cpptools-themes
 ms-vscode.makefile-tools
 twxs.cmake
+zhwu95.riscv
+ZixuanWang.linkerscript
