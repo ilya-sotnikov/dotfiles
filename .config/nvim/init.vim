@@ -6,6 +6,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'bfrg/vim-cpp-modern'
+Plug 'fedorenchik/qt-support.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
@@ -18,8 +19,12 @@ filetype plugin indent on
 " autocmd FileType c setlocal tabstop=2 shiftwidth=2
 " autocmd FileType asm setlocal tabstop=8 shiftwidth=8
 
+set colorcolumn=80,100
+
 nnoremap <silent> <leader>f :Files<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
+
+set switchbuf=useopen
 
 set number
 set relativenumber
