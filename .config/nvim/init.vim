@@ -7,6 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'fedorenchik/qt-support.vim'
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
