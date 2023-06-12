@@ -15,8 +15,8 @@ require('guess-indent').setup {}
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 -- colorscheme
-vim.o.termguicolors = true
-vim.cmd("colorscheme nord")
+-- vim.o.termguicolors = true
+vim.cmd('colorscheme base16-one-light')
 
 -- fzf mappings
 vim.keymap.set('n', '<Leader>f', '<cmd>Files<cr>')
@@ -37,6 +37,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     require("lsp-inlayhints").on_attach(client, bufnr)
   end,
 })
+
+-- misc
+vim.o.switchbuf = useopen
+vim.o.completeopt = vim.o.completeopt:gsub('preview', '')
+vim.keymap.set('n', '<F4>', '<cmd>ClangdSwitchSourceHeader<cr>')
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
@@ -78,6 +83,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format { async = true }
     end, opts)
-    vim.keymap.set('n', '<F4>', '[[<cmd>ClangdSwitchSourceHeader<cr>]]')
   end,
 })
