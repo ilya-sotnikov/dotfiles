@@ -1,6 +1,11 @@
 local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
 vim.cmd.source(vimrc)
 
+-- 4 spaces
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+
 -- line numbers
 vim.o.number = true
 vim.o.relativenumber = true
@@ -45,8 +50,9 @@ vim.keymap.set('n', '<F4>', '<cmd>ClangdSwitchSourceHeader<cr>')
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.clangd.setup {}
-lspconfig.tsserver.setup {}
+lspconfig.clangd.setup {
+    cmd = {'clangd-15'}
+}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
