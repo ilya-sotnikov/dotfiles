@@ -11,7 +11,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- columns
-vim.o.colorcolumn = "80,100"
+-- vim.o.colorcolumn = "80,100"
 
 -- detect indentation
 require('guess-indent').setup {}
@@ -21,7 +21,7 @@ require('guess-indent').setup {}
 
 -- colorscheme
 -- vim.o.termguicolors = true
-vim.cmd('colorscheme base16-gruvbox-dark-soft')
+vim.cmd('colorscheme base16-onedark')
 
 -- fzf mappings
 vim.keymap.set('n', '<Leader>f', '<cmd>Files<cr>')
@@ -109,8 +109,8 @@ keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
 
 
 -- Formatting selected code
-keyset("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
-keyset("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
+-- keyset("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
+-- keyset("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
 
 
 -- Setup formatexpr specified filetype(s)

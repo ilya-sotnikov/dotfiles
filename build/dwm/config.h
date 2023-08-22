@@ -3,22 +3,22 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack:size=10" };
 static const char dmenufont[]       = "Hack:size=10";
-static const char col_base00[]      = "#32302f";
-static const char col_base01[]      = "#3c3836";
-static const char col_base02[]      = "#504945";
-static const char col_base04[]      = "#bdae93";
-static const char col_base0C[]      = "#8ec07c";
-static const char col_base0D[]      = "#83a598";
+static const char col_base00[]      = "#282c34";
+static const char col_base01[]      = "#353b45";
+static const char col_base02[]      = "#3e4451";
+static const char col_base04[]      = "#565c64";
+static const char col_base0C[]      = "#56b6c2";
+static const char col_base0D[]      = "#61afef";
 static const char *colors[][3]      = {
 	/*               fg          bg          border   */
-	[SchemeNorm] = { col_base02, col_base0D, col_base00 },
-	[SchemeSel]  = { col_base04, col_base00, col_base0D },
+	[SchemeNorm] = { col_base0D, col_base00, col_base00 },
+	[SchemeSel]  = { col_base00, col_base0D, col_base0D },
 };
 
 /* tagging */
@@ -60,7 +60,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_base00, "-nf", col_base04, "-sb", col_base0D, "-sf", col_base00, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_base00, "-nf", col_base0D, "-sb", col_base0D, "-sf", col_base00, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static const char *volupcmd[]   = { "volctl.sh", "-i", NULL };
@@ -73,7 +73,9 @@ static const char *filemanagercmd[] = { "thunar", NULL };
 
 static const char *screenlockcmd[] = { "i3lock", "-c", "000000", NULL };
 
-static const char *statusbarupdatecmd[] = {"statusbar-update.sh", NULL};
+static const char *statusbarupdatecmd[] = { "statusbar-update.sh", NULL };
+
+static const char *themetogglecmd[] = { "theme-toggle.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -117,6 +119,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          { .v = filemanagercmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          { .v = screenlockcmd } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          { .v = screenlockcmd } },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          { .v = themetogglecmd } },
 	{ Mod4Mask,                     XK_space,  spawn,          { .v = statusbarupdatecmd } },
 };
 
