@@ -20,8 +20,12 @@ require('guess-indent').setup {}
 -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 -- colorscheme
--- vim.o.termguicolors = true
+vim.o.termguicolors = true
 vim.cmd('colorscheme base16-onedark')
+vim.api.nvim_create_autocmd({"ColorScheme"}, {
+  pattern = {"*"},
+  command = "hi! link CocMenuSel PmenuSel | hi! link CocPumMenu Pmenu | hi! link CocPumVirtualText Comment",
+})
 
 -- fzf mappings
 vim.keymap.set('n', '<Leader>f', '<cmd>Files<cr>')

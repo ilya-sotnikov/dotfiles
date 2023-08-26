@@ -32,6 +32,8 @@ fi
 
 setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 
+feh --bg-fill ~/pictures/wallpapers/wallpaper.png
+
 statusbar-loop.sh &
 
 exec startdwm.sh
