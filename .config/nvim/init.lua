@@ -34,7 +34,7 @@ vim.keymap.set('n', '<Leader>b', '<cmd>Buffers<cr>')
 -- misc
 vim.o.switchbuf = useopen
 vim.o.completeopt = vim.o.completeopt:gsub('preview', '')
-vim.keymap.set('n', '<F4>', '<cmd>ClangdSwitchSourceHeader<cr>')
+vim.keymap.set('n', '<F4>', '<cmd>CocCommand clangd.switchSourceHeader<cr>')
 
 -- Some servers have issues with backup files, see #649
 vim.opt.backup = false
