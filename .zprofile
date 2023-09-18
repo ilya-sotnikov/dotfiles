@@ -1,5 +1,1 @@
-PATH=$PATH:~/.local/bin
-
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-    exec startx
-fi
+PATH=$PATH:~/.local/bin:~/.cargo/bin

@@ -1,6 +1,0 @@
-{
-  "python.formatting.provider": "black",
-  "[c][cpp][python][json]": {
-    "coc.preferences.formatOnSave": true
-  }
-}
