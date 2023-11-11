@@ -1,8 +1,7 @@
 #!/bin/sh
 
 mkdir -p .config/nvim
-mkdir -p .config/clangd
+mkdir -p .config/emacs
 
 cp -r ~/.config/nvim .config
-cp -r ~/.config/clangd .config
-cp ~/.zprofile .
+cp ~/.config/emacs/init.el .config/emacs
