@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: header guard
+# key: hdg
+# --
+
+#ifndef ${1:`(upcase (file-name-base buffer-file-name))`_H$(upcase yas-text)}
+#define $1
+
+$0
+
+#endif // $1
