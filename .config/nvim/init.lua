@@ -28,3 +28,6 @@ vim.cmd [[autocmd BufNew,BufRead *.asm set ft=nasm]]
 
 -- explorer
 vim.keymap.set("n", "<C-t>", "<cmd>:Lexplore<cr>")
+
+-- docs
+vim.keymap.set("n", "<Leader>dd", "<Plug>(doge-generate)")

@@ -105,4 +105,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- autoformat on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
-vim.keymap.set("n", "<F4>", "<cmd>ClangdSwitchSourceHeader<cr>")
+-- switch source/header
+vim.keymap.set("n", "go", "<cmd>ClangdSwitchSourceHeader<cr>")
+
+-- snippets
+require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })

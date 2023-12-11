@@ -40,9 +40,21 @@ require("lazy").setup({
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip",
     "hrsh7th/cmp-nvim-lsp-signature-help",
-    "L3MON4D3/LuaSnip",
+    {
+        "L3MON4D3/LuaSnip",
+        dependencies = { "rafamadriz/friendly-snippets" },
+    },
     "tomtom/tcomment_vim",
     "NMAC427/guess-indent.nvim",
     "RRethy/nvim-base16",
-    "kylelaker/riscv.vim"
+    -- "kylelaker/riscv.vim",
+    {
+        "kkoomen/vim-doge",
+        build = ":call doge#install()"
+    },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
+    }
 })
