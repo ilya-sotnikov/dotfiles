@@ -33,9 +33,6 @@ require("lazy").setup({
     {
         "neovim/nvim-lspconfig",
     },
-    {
-        "p00f/clangd_extensions.nvim"
-    },
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip",
@@ -47,7 +44,6 @@ require("lazy").setup({
     "tomtom/tcomment_vim",
     "NMAC427/guess-indent.nvim",
     "RRethy/nvim-base16",
-    -- "kylelaker/riscv.vim",
     {
         "kkoomen/vim-doge",
         build = ":call doge#install()"

@@ -5,10 +5,6 @@ local lspconfig = require("lspconfig")
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 lspconfig.clangd.setup {
-    on_attach = function()
-        require("clangd_extensions.inlay_hints").setup_autocmd()
-        require("clangd_extensions.inlay_hints").set_inlay_hints()
-    end,
     capabilities = capabilities,
 }
 lspconfig.lua_ls.setup {
@@ -96,14 +92,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
         vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
         vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-        vim.keymap.set("n", "<space>f", function()
-            vim.lsp.buf.format { async = true }
-        end, opts)
+        -- vim.keymap.set("n", "<space>f", function()
+        --     vim.lsp.buf.format { async = true }
+        -- end, opts)
     end,
 })
 
 -- autoformat on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 -- switch source/header
 vim.keymap.set("n", "go", "<cmd>ClangdSwitchSourceHeader<cr>")
