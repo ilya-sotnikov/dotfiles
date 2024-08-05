@@ -1,0 +1,6 @@
+[includeIf "gitdir:~/git/"]
+  path = ~/.gitconfig-main
+[includeIf "gitdir:~/work/"]
+  path = ~/.gitconfig-prosoft
+[includeIf "gitdir:/mnt/"]
+  path = ~/.gitconfig-prosoft

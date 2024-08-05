@@ -336,7 +336,6 @@ zstyle ':prompt:grml:left:setup' items rc virtual-env change-root user at host p
 #showINC ()    { perl -e 'for (@INC) { printf "%d %s\n", $i++, $_ }' }
 #vimpm ()      { vim `perldoc -l $1 | sed -e 's/pod$/pm/'` }
 #vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
-
-export PATH="$HOME/opt/nvim-linux64/bin:$HOME/opt/gcc-cross/bin:$HOME/opt:$HOME/opt/bin:${PATH}"
+export PATH="$HOME/opt/nvim-linux64/bin:$HOME/opt/gcc-cross/bin:$HOME/opt:$HOME/opt/bin:/opt/sitara-gcc-6.3/bin:/usr/sbin:${PATH}"
 
 ## END OF FILE #################################################################
