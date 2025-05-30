@@ -14,6 +14,19 @@ vim.opt.rtp:prepend(lazypath)
 -- plugins
 require("lazy").setup({
     {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        config = function()
+            local configs = require("nvim-treesitter.configs")
+            configs.setup({
+                ensure_installed = { "c", "cpp", "python", "lua", "vim", "vimdoc", },
+                sync_install = false,
+                highlight = { enable = true },
+                indent = { enable = true },
+            })
+        end
+    },
+    {
         "nvim-telescope/telescope.nvim",
         branch = "0.1.x",
         dependencies = "nvim-lua/plenary.nvim",
@@ -42,11 +55,12 @@ lspconfig.clangd.setup {
     capabilities = capabilities,
     cmd = {
         "clangd",
-        '--query-driver="/opt/qnx650/host/linux/x86/usr/lib/gcc/i486-pc-nto-qnx6.5.0/4.4.2/cc1plus"'
+        '--header-insertion=never',
     },
 }
 
 lspconfig.lua_ls.setup {}
+lspconfig.pyright.setup {}
 
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -78,7 +92,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- autoformat on save
--- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 -- switch source/header
 vim.keymap.set("n", "go", "<cmd>ClangdSwitchSourceHeader<cr>")
@@ -117,7 +131,7 @@ vim.o.colorcolumn = "80,100"
 
 -- colorscheme
 vim.o.termguicolors = true
-vim.cmd("colorscheme base16-gruvbox-material-dark-soft")
+vim.cmd("colorscheme base16-one-light")
 
 vim.o.keymap = "russian-jcukenwin"
 vim.o.iminsert = 0
